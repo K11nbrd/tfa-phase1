@@ -2,7 +2,7 @@
 
 This bundle packages the current static source for QA pickup per the source-delivery brief.
 
-## Included
+## Included 
 
 - `assets/asset7/` — Kıdem Tazminatı Dedektifi HTML pages and JS calculator/PDF trigger
 - `assets/asset10/` — Doğalgaz Kademe Dedektifi HTML pages and JS calculator/PNG verdict card generator
