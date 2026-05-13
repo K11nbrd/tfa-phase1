@@ -1,0 +1,62 @@
+{
+  "generated_for": "Asset 7 PDF adapter QA preflight",
+  "fixtures": [
+    {
+      "input": {
+        "id": "eligible_isveren_feshi_below_tavan",
+        "title_tr": "Uygun örnek — işveren feshi, tavan altı",
+        "departure_reason": "isveren_feshi",
+        "departure_reason_label_tr": "İşveren tarafından fesih (haklı neden dışında)",
+        "base_salary_tl": 50000,
+        "food_allowance_tl": 3000,
+        "transport_allowance_tl": 2000,
+        "fuel_allowance_annual_tl": 6000,
+        "fuel_allowance_monthly_tl": 500,
+        "tenure_days": 1825,
+        "tenure_label_tr": "5 yıl",
+        "service_multiplier": 5
+      },
+      "expected_result": {
+        "eligible": true,
+        "departure_reason_label_tr": "İşveren tarafından fesih (haklı neden dışında)",
+        "verdict_text_tr": "Kıdem tazminatına hak kazandınız. İşveren feshi durumunda en az 1 yıl kıdem şartıyla kıdem tazminatı ödenir; ayrıca ihbar tazminatı talep edebilirsiniz.",
+        "statute_citation": "1475 sayılı İş Kanunu Madde 14; 4857 sayılı İş Kanunu Madde 17",
+        "notice_entitlement": true,
+        "service_multiplier": 5.0,
+        "giydirilmis_ucret_tl": 55500.0,
+        "capped_monthly_tl": 55500.0,
+        "gross_kidem_tl": 277500.0,
+        "damga_vergisi_tl": 2106.22,
+        "net_kidem_tl": 275393.78,
+        "next_steps_tr": "Bordro, fesih bildirimi, SGK hizmet dökümü ve banka ödeme kayıtlarını saklayın. Arabuluculuk başvurusu öncesinde bu tutanağı avukatınızla paylaşın."
+      }
+    },
+    {
+      "input": {
+        "id": "ineligible_istifa",
+        "title_tr": "Uygun olmayan örnek — istifa",
+        "departure_reason": "istifa",
+        "departure_reason_label_tr": "İşçinin istifası (haklı neden dışında)",
+        "base_salary_tl": 50000,
+        "food_allowance_tl": 3000,
+        "transport_allowance_tl": 2000,
+        "fuel_allowance_annual_tl": 6000,
+        "fuel_allowance_monthly_tl": 500,
+        "tenure_days": 1825,
+        "tenure_label_tr": "5 yıl",
+        "service_multiplier": 5
+      },
+      "expected_result": {
+        "eligible": false,
+        "departure_reason_label_tr": "İşçinin istifası (haklı neden dışında)",
+        "verdict_text_tr": "Haklı bir neden olmaksızın istifa halinde kıdem tazminatına hak kazanılmaz. Belirli istisnai durumlar (askerlik, evlilik, emeklilik, sağlık, işverenin haklı neden teşkil eden davranışları) ayrı değerlendirilir.",
+        "statute_citation": "1475 sayılı İş Kanunu Madde 14",
+        "notice_entitlement": false,
+        "service_multiplier": 5.0,
+        "giydirilmis_ucret_tl": 55500.0,
+        "capped_monthly_tl": 55500.0,
+        "next_steps_tr": "Bu senaryoda sayısal kıdem tazminatı tutarı gösterilmez. Haklı neden, askerlik, emeklilik, evlilik veya sağlık istisnası varsa belgeyle tekrar değerlendirilmelidir."
+      }
+    }
+  ]
+}

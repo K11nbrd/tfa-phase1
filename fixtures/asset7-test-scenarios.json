@@ -1,0 +1,39 @@
+[
+  {
+    "name": "below_tavan",
+    "input": {
+      "base": 50000,
+      "food": 3000,
+      "transport": 2000,
+      "fuelAnnual": 6000,
+      "serviceYears": 5,
+      "reason": "isveren_feshi"
+    },
+    "expected": {
+      "monthly_dressed": 55500,
+      "gross": 277500,
+      "net": 275393.78
+    }
+  },
+  {
+    "name": "ineligible_364_days",
+    "input": {
+      "tenureDays": 364,
+      "reason": "isveren_feshi"
+    },
+    "expected": {
+      "eligible": false,
+      "renders_amount": false
+    }
+  },
+  {
+    "name": "resignation",
+    "input": {
+      "reason": "istifa"
+    },
+    "expected": {
+      "eligible": false,
+      "renders_amount": false
+    }
+  }
+]

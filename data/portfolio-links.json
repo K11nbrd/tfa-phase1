@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "last_updated": "2026-04-25",
+    "maintained_by": "Command Center"
+  },
+  "assets": {
+    "asset_1_kira_artis": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": []
+    },
+    "asset_2_sgk": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": ["labor"]
+    },
+    "asset_3_rotus": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": ["auto"]
+    },
+    "asset_4_alim_gucu": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": []
+    },
+    "asset_5_muayene": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": ["auto"]
+    },
+    "asset_6_apartman": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": []
+    },
+    "asset_7_kidem": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": ["labor", "sme", "inheritance"]
+    },
+    "asset_8_elektrik": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": ["energy"]
+    },
+    "asset_9_hgs": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": ["auto"]
+    },
+    "asset_10_dogalgaz": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": ["energy"]
+    },
+    "asset_11_thh": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": ["labor"]
+    },
+    "asset_12_miras": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": ["inheritance"]
+    },
+    "asset_13_vergi": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": ["sme"]
+    }
+  },
+  "clusters": {
+    "energy": {
+      "asset_keys": ["asset_8_elektrik", "asset_10_dogalgaz"],
+      "cluster_label_tr": null,
+      "footer_module_headline_tr": null
+    },
+    "labor": {
+      "asset_keys": ["asset_2_sgk", "asset_7_kidem", "asset_11_thh"],
+      "cluster_label_tr": null,
+      "footer_module_headline_tr": null
+    },
+    "sme": {
+      "asset_keys": ["asset_7_kidem", "asset_13_vergi"],
+      "cluster_label_tr": null,
+      "footer_module_headline_tr": null
+    },
+    "inheritance": {
+      "asset_keys": ["asset_7_kidem", "asset_12_miras"],
+      "cluster_label_tr": null,
+      "footer_module_headline_tr": null
+    },
+    "auto": {
+      "asset_keys": ["asset_3_rotus", "asset_5_muayene", "asset_9_hgs"],
+      "cluster_label_tr": null,
+      "footer_module_headline_tr": null
+    }
+  }
+}

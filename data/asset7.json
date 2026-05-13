@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "last_updated": "2026-05-06",
+    "effective_period": "2026-H1",
+    "next_review_date": "2026-07-01"
+  },
+  "tavan": {
+    "current_tl_per_year": 64948.77,
+    "effective_from": "2026-01-01",
+    "effective_until": "2026-06-30",
+    "source_citation": "T.C. Hazine ve Maliye Bakanlığı, Mali ve Sosyal Haklara İlişkin Genelge, 06/01/2026 tarihli, 2026/1 sayılı",
+    "source_url": "https://www.hmb.gov.tr/kamu-mali-yonetim-genel-mudurlugu-genelgeleri"
+  },
+  "tavan_history": [
+    {
+      "period_label": "2021 I. Yarı",
+      "effective_from": "2021-01-01",
+      "effective_until": "2021-06-30",
+      "tl_per_year": 7638.96
+    },
+    {
+      "period_label": "2021 II. Yarı",
+      "effective_from": "2021-07-01",
+      "effective_until": "2021-12-31",
+      "tl_per_year": 8284.51
+    },
+    {
+      "period_label": "2022 I. Yarı",
+      "effective_from": "2022-01-01",
+      "effective_until": "2022-06-30",
+      "tl_per_year": 10848.59
+    },
+    {
+      "period_label": "2022 II. Yarı",
+      "effective_from": "2022-07-01",
+      "effective_until": "2022-12-31",
+      "tl_per_year": 15371.4
+    },
+    {
+      "period_label": "2023 I. Yarı",
+      "effective_from": "2023-01-01",
+      "effective_until": "2023-06-30",
+      "tl_per_year": 19982.83
+    },
+    {
+      "period_label": "2023 II. Yarı",
+      "effective_from": "2023-07-01",
+      "effective_until": "2023-12-31",
+      "tl_per_year": 23489.83
+    },
+    {
+      "period_label": "2024 I. Yarı",
+      "effective_from": "2024-01-01",
+      "effective_until": "2024-06-30",
+      "tl_per_year": 35058.58
+    },
+    {
+      "period_label": "2024 II. Yarı",
+      "effective_from": "2024-07-01",
+      "effective_until": "2024-12-31",
+      "tl_per_year": 41828.42
+    },
+    {
+      "period_label": "2025 I. Yarı",
+      "effective_from": "2025-01-01",
+      "effective_until": "2025-06-30",
+      "tl_per_year": 46655.43
+    },
+    {
+      "period_label": "2025 II. Yarı",
+      "effective_from": "2025-07-01",
+      "effective_until": "2025-12-31",
+      "tl_per_year": 53919.68
+    },
+    {
+      "period_label": "2026 I. Yarı",
+      "effective_from": "2026-01-01",
+      "effective_until": "2026-06-30",
+      "tl_per_year": 64948.77
+    }
+  ],
+  "damga_vergisi_rate": 0.00759,
+  "sgk_ceiling_multiplier": {
+    "current": 9,
+    "effective_from": "2026-01-01",
+    "previous": 7.5
+  },
+  "eligibility_rules": {
+    "minimum_tenure_days": 365,
+    "departure_reasons": [
+      {
+        "id": "isveren_feshi",
+        "label_tr": "İşveren tarafından fesih (haklı neden dışında)",
+        "eligible": true,
+        "requires_minimum_tenure_days": 365,
+        "notice_entitlement": true,
+        "verdict_text_tr": "Kıdem tazminatına hak kazandınız. İşveren feshi durumunda en az 1 yıl kıdem şartıyla kıdem tazminatı ödenir; ayrıca ihbar tazminatı talep edebilirsiniz.",
+        "statute_citation": "1475 sayılı İş Kanunu Madde 14; 4857 sayılı İş Kanunu Madde 17"
+      },
+      {
+        "id": "istifa",
+        "label_tr": "İşçinin istifası (haklı neden dışında)",
+        "eligible": false,
+        "requires_minimum_tenure_days": 0,
+        "notice_entitlement": false,
+        "verdict_text_tr": "Haklı bir neden olmaksızın istifa halinde kıdem tazminatına hak kazanılmaz. Belirli istisnai durumlar (askerlik, evlilik, emeklilik, sağlık, işverenin haklı neden teşkil eden davranışları) ayrı değerlendirilir.",
+        "statute_citation": "1475 sayılı İş Kanunu Madde 14"
+      },
+      {
+        "id": "evlilik",
+        "label_tr": "Evlilik nedeniyle fesih (kadın işçi)",
+        "eligible": true,
+        "requires_minimum_tenure_days": 365,
+        "notice_entitlement": false,
+        "verdict_text_tr": "Kadın işçi, evlendiği tarihten itibaren bir yıl içinde iş sözleşmesini feshederse kıdem tazminatına hak kazanır. İhbar tazminatı bu durumda doğmaz.",
+        "statute_citation": "1475 sayılı İş Kanunu Madde 14/1-(a)"
+      },
+      {
+        "id": "emeklilik",
+        "label_tr": "Emeklilik nedeniyle fesih",
+        "eligible": true,
+        "requires_minimum_tenure_days": 365,
+        "notice_entitlement": false,
+        "verdict_text_tr": "Yaşlılık aylığı, malullük aylığı veya toptan ödeme almak amacıyla iş sözleşmesini fesheden işçi kıdem tazminatına hak kazanır. SGK'dan alınacak yazı ile ispat edilir.",
+        "statute_citation": "1475 sayılı İş Kanunu Madde 14/1"
+      },
+      {
+        "id": "olum",
+        "label_tr": "İşçinin ölümü",
+        "eligible": true,
+        "requires_minimum_tenure_days": 365,
+        "notice_entitlement": false,
+        "verdict_text_tr": "İşçinin ölümü halinde kıdem tazminatı kanuni mirasçılarına ödenir. Veraset ilamı ile başvuru yapılır.",
+        "statute_citation": "1475 sayılı İş Kanunu Madde 14"
+      },
+      {
+        "id": "askerlik",
+        "label_tr": "Muvazzaf askerlik nedeniyle fesih",
+        "eligible": true,
+        "requires_minimum_tenure_days": 365,
+        "notice_entitlement": false,
+        "verdict_text_tr": "Muvazzaf askerlik hizmeti dolayısıyla iş sözleşmesini fesheden işçi kıdem tazminatına hak kazanır. Sevk belgesi ibrazı zorunludur.",
+        "statute_citation": "1475 sayılı İş Kanunu Madde 14/1"
+      },
+      {
+        "id": "saglik",
+        "label_tr": "Sağlık nedenleriyle fesih",
+        "eligible": true,
+        "requires_minimum_tenure_days": 365,
+        "notice_entitlement": false,
+        "verdict_text_tr": "Sağlık sebepleri (4857/24-I) ile iş sözleşmesini haklı nedenle fesheden işçi kıdem tazminatına hak kazanır. Tam teşekküllü hastane raporu gereklidir.",
+        "statute_citation": "4857 sayılı İş Kanunu Madde 24/I; 1475 sayılı İş Kanunu Madde 14"
+      }
+    ],
+    "marriage_clause": {
+      "applies_to": "female",
+      "window_days_after_marriage": 365,
+      "notice_required": false
+    }
+  },
+  "ihbar_periods": [
+    {
+      "tenure_min_days": 0,
+      "tenure_max_days": 179,
+      "notice_weeks": 2
+    },
+    {
+      "tenure_min_days": 180,
+      "tenure_max_days": 547,
+      "notice_weeks": 4
+    },
+    {
+      "tenure_min_days": 548,
+      "tenure_max_days": 1094,
+      "notice_weeks": 6
+    },
+    {
+      "tenure_min_days": 1095,
+      "tenure_max_days": 999999,
+      "notice_weeks": 8
+    }
+  ],
+  "annual_leave_tiers": [
+    {
+      "tenure_min_years": 1,
+      "tenure_max_years": 5,
+      "days_per_year": 14
+    },
+    {
+      "tenure_min_years": 5,
+      "tenure_max_years": 15,
+      "days_per_year": 20
+    },
+    {
+      "tenure_min_years": 15,
+      "tenure_max_years": 999,
+      "days_per_year": 26
+    }
+  ],
+  "cities": [
+    {
+      "slug": "istanbul",
+      "name_tr": "İstanbul",
+      "local_court_name_tr": "İstanbul İş Mahkemeleri",
+      "mediation_office_address": null,
+      "avg_tenure_months": 38
+    },
+    {
+      "slug": "ankara",
+      "name_tr": "Ankara",
+      "local_court_name_tr": "Ankara İş Mahkemeleri",
+      "mediation_office_address": null,
+      "avg_tenure_months": 42
+    },
+    {
+      "slug": "izmir",
+      "name_tr": "İzmir",
+      "local_court_name_tr": "İzmir İş Mahkemeleri",
+      "mediation_office_address": null,
+      "avg_tenure_months": 40
+    },
+    {
+      "slug": "bursa",
+      "name_tr": "Bursa",
+      "local_court_name_tr": "Bursa İş Mahkemeleri",
+      "mediation_office_address": null,
+      "avg_tenure_months": 44
+    },
+    {
+      "slug": "antalya",
+      "name_tr": "Antalya",
+      "local_court_name_tr": "Antalya İş Mahkemeleri",
+      "mediation_office_address": null,
+      "avg_tenure_months": 36
+    }
+  ],
+  "pdf_config": {
+    "title_tr": "Kıdem Tazminatı Hesap Tutanağı",
+    "footer_disclaimer_tr": "Bu tutanak, giydirilmiş ücretiniz ve hizmet sürenize göre hazırlanmış bir ön hesaplamadır. Hukuki sonuç doğurmaz. İşvereninizle yapılacak görüşme, arabuluculuk başvurusu veya dava öncesinde bir iş hukuku avukatına danışmanızı tavsiye ederiz.",
+    "logo_base64": ""
+  }
+}

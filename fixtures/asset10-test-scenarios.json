@@ -1,0 +1,23 @@
+[
+  {
+    "province": "istanbul",
+    "month": "04",
+    "consumption": 192.55,
+    "expected_verdict": "KADEME_1",
+    "logic": "consumption*k1"
+  },
+  {
+    "province": "istanbul",
+    "month": "04",
+    "consumption": 193.55,
+    "expected_verdict": "KADEME_2",
+    "logic": "full consumption*k2; difference=full consumption*(k2-k1)"
+  },
+  {
+    "province": "ankara",
+    "month": "12",
+    "consumption": 255.825,
+    "expected_verdict": "KADEME_1",
+    "near_limit_warning": true
+  }
+]
