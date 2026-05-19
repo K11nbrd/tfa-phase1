@@ -1,14 +1,9 @@
-Roboto font source contract for Asset 7 PDF adapter and Asset 10 PNG cards
-============================================================================
+Roboto font source contract for Asset 7 PDF adapter
+===================================================
 
-Required deployment paths:
+Roboto-Regular.ttf and Roboto-Bold.ttf must remain present in the deployed repo at:
 
-  assets/fonts/Roboto-Regular.ttf
-  assets/fonts/Roboto-Bold.ttf
+/assets/fonts/Roboto-Regular.ttf
+/assets/fonts/Roboto-Bold.ttf
 
-The JavaScript and HTML templates in this package are wired to these exact
-paths. Asset 7 PDF generation uses these files for Turkish glyph coverage in
-jsPDF; Asset 10 preloads them for canvas verdict-card rendering.
-
-Do not rename the files or move them without updating the adapter and preload
-links.
+This handoff intentionally does not redistribute font binaries. Copy the existing approved binaries from the current private repo/static bundle before deployment so jsPDF and canvas rendering keep Turkish glyph support.

@@ -1,0 +1,26 @@
+# URL inventory — read-only
+
+- `/`
+- `/assets/asset10/ankara-dogalgaz-limiti.html`
+- `/assets/asset10/antalya-dogalgaz-limiti.html`
+- `/assets/asset10/bursa-dogalgaz-limiti.html`
+- `/assets/asset10/dogalgaz-fatura-nasil-okunur.html`
+- `/assets/asset10/dogalgaz-kademe-hesaplama.html`
+- `/assets/asset10/dogalgaz-tasarruf-ipuclari.html`
+- `/assets/asset10/il-dogalgaz-limitleri.html`
+- `/assets/asset10/istanbul-dogalgaz-limiti.html`
+- `/assets/asset10/izmir-dogalgaz-limiti.html`
+- `/assets/asset10/kademe-2-nasil-dusurulurum.html`
+- `/assets/asset10/kfu-nedir-nasil-calisir.html`
+- `/assets/asset7/ankara-kidem.html`
+- `/assets/asset7/antalya-kidem.html`
+- `/assets/asset7/arabuluculuk-rehberi.html`
+- `/assets/asset7/bursa-kidem.html`
+- `/assets/asset7/evlilik-tazminati.html`
+- `/assets/asset7/giydirilmis-ucret-nedir.html`
+- `/assets/asset7/ihbar-tazminati-hesaplama.html`
+- `/assets/asset7/istanbul-kidem.html`
+- `/assets/asset7/izmir-kidem.html`
+- `/assets/asset7/kidem-tazminati-hesaplama.html`
+- `/assets/asset7/kidem-tazminati-tavani-tarihi.html`
+- `/assets/asset7/yillik-izin-ucretim.html`

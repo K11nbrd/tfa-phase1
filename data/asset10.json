@@ -12,12 +12,7 @@
     "premium_percentage": 69.41,
     "currency": "TRY",
     "price_effective_from": "2026-04-04",
-    "source_citation": "BOTAŞ, “4 Nisan 2026 Tarihinden İtibaren Geçerli BOTAŞ Doğal Gaz Toptan Satış Fiyat Tarifesi”: “Konut Tüketicileri (Evsel Tüketiciler) Kademe-1 10,625000”; “Konut Tüketicileri (Evsel Tüketiciler) Kademe-2 18,000000”; “Tarife'de yer alan Fiyatlar KDV ve ÖTV hariç fiyatlardır.”",
-    "kdv_rate": 0.2,
-    "kdv_effective_from": "2023-07-10",
-    "otv_per_sm3": 0.1468,
-    "otv_effective_from": "2025-12-31",
-    "tax_source_citation": "GİB DC v2 notu: KDV oranı %20; doğalgaz ÖTV tutarı 0,1468 TL/sm³; ÖTV yürürlük tarihi 2025-12-31."
+    "source_citation": "BOTAŞ, “4 Nisan 2026 Tarihinden İtibaren Geçerli BOTAŞ Doğal Gaz Toptan Satış Fiyat Tarifesi”: “Konut Tüketicileri (Evsel Tüketiciler) Kademe-1 10,625000”; “Konut Tüketicileri (Evsel Tüketiciler) Kademe-2 18,000000”; “Tarife'de yer alan Fiyatlar KDV ve ÖTV hariç fiyatlardır.”"
   },
   "rules": {
     "full_bill_flip": true,
@@ -1848,8 +1843,8 @@
   "verdict_card_config": {
     "background_color_k1": "#0E7C4A",
     "background_color_k2": "#B91C1C",
-    "full_bill_flip_warning_tr": "⚠ Dikkat: Aylık kademe sınırından bir sm³ bile daha fazla kullanırsanız faturanız değişir — ama sadece o 1 sm³ için değil, o ayki tüketimin tüm bedeli Kademe-2'ye döner.",
-    "kdv_otv_disclaimer_tr": "KDV ve ÖTV dahil tahmini fatura yukarıda gösterilmiştir. Kesin tutar için faturanıza bakın; vergi oranları değişebilir.",
+    "full_bill_flip_warning_tr": "⚠ Dikkat: 1 sm³ fazla kullanırsanız faturanız değişir — ama sadece o 1 sm³ için değil, o ayki tüketimin tüm bedeli Kademe-2'ye döner.",
+    "kdv_otv_disclaimer_tr": "Gerçek faturanız bu tutardan yüksek çıkar: BOTAŞ birim fiyatı KDV ve ÖTV içermez, bu vergiler faturaya ayrıca eklenir. Hesaplama vergisiz tutardır.",
     "footer_disclaimer_tr": "Bu hesaplama bilgilendirme amaçlıdır. Kesin fatura tutarı için fatura veya dağıtım şirketinizle teyit edin."
   }
 }

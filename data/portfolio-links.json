@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "1.0",
-    "last_updated": "2026-04-25",
+    "last_updated": "2026-05-19",
     "maintained_by": "Command Center"
   },
   "assets": {
@@ -19,7 +19,10 @@
       "canonical_url": null,
       "display_name_tr": null,
       "cross_link_cta_tr": null,
-      "cluster_tags": ["labor"]
+      "cluster_tags": [
+        "labor",
+        "retirement"
+      ]
     },
     "asset_3_rotus": {
       "live": false,
@@ -27,7 +30,9 @@
       "canonical_url": null,
       "display_name_tr": null,
       "cross_link_cta_tr": null,
-      "cluster_tags": ["auto"]
+      "cluster_tags": [
+        "auto"
+      ]
     },
     "asset_4_alim_gucu": {
       "live": false,
@@ -43,7 +48,9 @@
       "canonical_url": null,
       "display_name_tr": null,
       "cross_link_cta_tr": null,
-      "cluster_tags": ["auto"]
+      "cluster_tags": [
+        "auto"
+      ]
     },
     "asset_6_apartman": {
       "live": false,
@@ -54,12 +61,16 @@
       "cluster_tags": []
     },
     "asset_7_kidem": {
-      "live": false,
+      "live": true,
       "launch_date": null,
       "canonical_url": null,
-      "display_name_tr": null,
+      "display_name_tr": "Kıdem Tazminatı Çözümleyici",
       "cross_link_cta_tr": null,
-      "cluster_tags": ["labor", "sme", "inheritance"]
+      "cluster_tags": [
+        "labor",
+        "sme",
+        "inheritance"
+      ]
     },
     "asset_8_elektrik": {
       "live": false,
@@ -67,7 +78,9 @@
       "canonical_url": null,
       "display_name_tr": null,
       "cross_link_cta_tr": null,
-      "cluster_tags": ["energy"]
+      "cluster_tags": [
+        "energy"
+      ]
     },
     "asset_9_hgs": {
       "live": false,
@@ -75,15 +88,19 @@
       "canonical_url": null,
       "display_name_tr": null,
       "cross_link_cta_tr": null,
-      "cluster_tags": ["auto"]
+      "cluster_tags": [
+        "auto"
+      ]
     },
     "asset_10_dogalgaz": {
-      "live": false,
+      "live": true,
       "launch_date": null,
       "canonical_url": null,
-      "display_name_tr": null,
+      "display_name_tr": "Doğalgaz Kademe Çözümleyici",
       "cross_link_cta_tr": null,
-      "cluster_tags": ["energy"]
+      "cluster_tags": [
+        "energy"
+      ]
     },
     "asset_11_thh": {
       "live": false,
@@ -91,7 +108,9 @@
       "canonical_url": null,
       "display_name_tr": null,
       "cross_link_cta_tr": null,
-      "cluster_tags": ["labor"]
+      "cluster_tags": [
+        "labor"
+      ]
     },
     "asset_12_miras": {
       "live": false,
@@ -99,7 +118,9 @@
       "canonical_url": null,
       "display_name_tr": null,
       "cross_link_cta_tr": null,
-      "cluster_tags": ["inheritance"]
+      "cluster_tags": [
+        "inheritance"
+      ]
     },
     "asset_13_vergi": {
       "live": false,
@@ -107,32 +128,71 @@
       "canonical_url": null,
       "display_name_tr": null,
       "cross_link_cta_tr": null,
-      "cluster_tags": ["sme"]
+      "cluster_tags": [
+        "sme"
+      ]
+    },
+    "asset_14_tes": {
+      "live": false,
+      "launch_date": null,
+      "canonical_url": null,
+      "display_name_tr": null,
+      "cross_link_cta_tr": null,
+      "cluster_tags": [
+        "labor",
+        "retirement"
+      ]
     }
   },
   "clusters": {
     "energy": {
-      "asset_keys": ["asset_8_elektrik", "asset_10_dogalgaz"],
+      "asset_keys": [
+        "asset_8_elektrik",
+        "asset_10_dogalgaz"
+      ],
       "cluster_label_tr": null,
       "footer_module_headline_tr": null
     },
     "labor": {
-      "asset_keys": ["asset_2_sgk", "asset_7_kidem", "asset_11_thh"],
+      "asset_keys": [
+        "asset_2_sgk",
+        "asset_7_kidem",
+        "asset_11_thh",
+        "asset_14_tes"
+      ],
       "cluster_label_tr": null,
       "footer_module_headline_tr": null
     },
     "sme": {
-      "asset_keys": ["asset_7_kidem", "asset_13_vergi"],
+      "asset_keys": [
+        "asset_7_kidem",
+        "asset_13_vergi"
+      ],
       "cluster_label_tr": null,
       "footer_module_headline_tr": null
     },
     "inheritance": {
-      "asset_keys": ["asset_7_kidem", "asset_12_miras"],
+      "asset_keys": [
+        "asset_7_kidem",
+        "asset_12_miras"
+      ],
       "cluster_label_tr": null,
       "footer_module_headline_tr": null
     },
     "auto": {
-      "asset_keys": ["asset_3_rotus", "asset_5_muayene", "asset_9_hgs"],
+      "asset_keys": [
+        "asset_3_rotus",
+        "asset_5_muayene",
+        "asset_9_hgs"
+      ],
+      "cluster_label_tr": null,
+      "footer_module_headline_tr": null
+    },
+    "retirement": {
+      "asset_keys": [
+        "asset_2_sgk",
+        "asset_14_tes"
+      ],
       "cluster_label_tr": null,
       "footer_module_headline_tr": null
     }
