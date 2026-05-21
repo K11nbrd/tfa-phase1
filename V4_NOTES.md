@@ -1,23 +1,62 @@
-# V4 Notes — Asset 7 PDF Blank Fix Patch
+# Phase 1 Source Delivery v4 — Post-Launch Fix Bundle
 
-Scope: apply launch-blocker blank PDF remediation to v3 source with no calculator math refactor.
+## Source-state note
 
-## Integrated changes
+This package was built from the latest source artifact available in project knowledge: `tfa_phase1_source_delivery_v3_QA_FINAL_directory_dump.md`.
 
-- Replaced `shared/js/asset7-pdf-adapter.js` with the blank-fix jsPDF adapter: no canvas snapshot, no manual `%PDF` serialization, jsPDF writes vector rectangles and real text streams.
-- Updated `shared/js/pdf-generator.js` bridge to call `window.Asset7Pdf.downloadHesapTutanagi()` and normalize the v3 calculator state into the adapter contract.
-- Updated `assets/asset7/asset7.js` so the stored PDF payload includes `departure_reason_id`, `service_days`, `service_years`, salary/allowance aliases, calculation aliases, and an explicit eligibility object.
-- Added ihbar note output only when the selected departure reason has `notice_entitlement: true`.
-- Preserved the eligibility gate: ineligible verdicts return before downstream amount calculation and do not expose a PDF download button.
-- Added `.pdf-error` styling for client-side PDF generation failures.
+The accessible v3 source did **not** contain the four-part Asset 7 evlilik gender fix: the gender field was visible by default, included a third option, did not emit an immediate Erkek+Evlilik ineligibility verdict, and did not show the Kadın+Evlilik one-year disclosure.
 
-## Preserved behavior
+Production source version could not be independently fetched from this build environment, so this v4 package applies the 2026-05-20 routing spec into the latest accessible source state.
 
-- Tavan remains applied to monthly giydirilmiş gross before multiplying by service duration.
-- Net kıdem remains gross kıdem minus `data/asset7.json` `damga_vergisi_rate`.
-- Asset 10 v3 Turkish metadata/font fixes remain unchanged.
-- All variable values continue to be read from JSON.
+## Fix 1 — Asset 7 evlilik gender logic
 
-## QA smoke target
+Implemented the four coupled fixes on `assets/asset7/kidem-tazminati-hesaplama.html` and `assets/asset7/asset7.js`:
 
-Eligible sample: 50,000 base + 3,000 yemek + 2,000 yol + 6,000/year yakacak over 5 years should produce net `₺275.393,78` and ihbar note `8 hafta - ₺103.600,00` in the PDF.
+- Gender field is hidden by default.
+- Gender field appears only for `evlilik`, becomes required, and has no default user answer.
+- Gender dropdown now contains only `Kadın` and `Erkek` user choices.
+- `Evlilik + Erkek` immediately renders the locked ineligibility verdict and collapses downstream form fields.
+- `Evlilik + Kadın` displays the locked one-year disclosure above the calculate button, including the required `kaybedilir` wording.
+- No `marriage_date` field or 365-day marriage-window validation was added; that remains out of scope for this deploy.
+
+Locked strings used verbatim:
+
+- `Evlilik istisnası yalnızca kadın işçi için uygulanır.`
+- `Evlilik nedeniyle kıdem tazminatı yalnızca nikah tarihinden itibaren 1 yıl içinde ayrılan kadın işçiler için geçerlidir. Bu süre dolduktan sonra hak kaybedilir.`
+
+## Fix 2 — Debug footer removal
+
+Removed the development diagnostic Turkish-character footer string from public HTML surfaces in Asset 7 and Asset 10, including the two routed calculator pages:
+
+- `assets/asset7/kidem-tazminati-hesaplama.html`
+- `assets/asset10/dogalgaz-kademe-hesaplama.html`
+
+## Portfolio links refresh
+
+Updated `data/portfolio-links.json` to the current 2026-05-19 master supplied by Command Center.
+
+Confirmed current master values:
+
+- `asset_7_kidem.live = true`
+- `asset_7_kidem.display_name_tr = "Kıdem Tazminatı Çözümleyici"`
+- `asset_10_dogalgaz.live = true`
+- `asset_10_dogalgaz.display_name_tr = "Doğalgaz Kademe Çözümleyici"`
+- `canonical_url = null` remains intentional portfolio-wide pending Architect URL ruling.
+
+## Public display-name cleanup retained
+
+Replaced internal codename-style public labels in the accessible source with the locked public display names:
+
+- `Kıdem Tazminatı Çözümleyici`
+- `Doğalgaz Kademe Çözümleyici`
+
+## Verification performed
+
+- `node --check assets/asset7/asset7.js` passed.
+- `node --check assets/asset10/asset10.js` passed.
+- Repository grep confirmed no remaining development diagnostic footer strings in public source surfaces.
+- Repository grep confirmed no remaining internal codename-style public labels in public source surfaces.
+- Confirmed bundled binaries remain present:
+  - `assets/fonts/Roboto-Regular.ttf`
+  - `assets/fonts/Roboto-Bold.ttf`
+  - `vendor/jspdf.umd.min.js`

@@ -1,9 +1,14 @@
 Roboto font source contract for Asset 7 PDF adapter
 ===================================================
 
-Roboto-Regular.ttf and Roboto-Bold.ttf must remain present in the deployed repo at:
+The adapter is configured to use Roboto-Regular and Roboto-Bold through one of two static-client paths:
 
-/assets/fonts/Roboto-Regular.ttf
-/assets/fonts/Roboto-Bold.ttf
+1) Base64 injection before js/asset7-pdf-adapter.js loads:
+   window.ASSET7_ROBOTO_REGULAR_BASE64 = "...";
+   window.ASSET7_ROBOTO_BOLD_BASE64 = "...";
 
-This handoff intentionally does not redistribute font binaries. Copy the existing approved binaries from the current private repo/static bundle before deployment so jsPDF and canvas rendering keep Turkish glyph support.
+2) Static TTF assets served locally from:
+   /assets/fonts/Roboto-Regular.ttf
+   /assets/fonts/Roboto-Bold.ttf
+
+No external font CDN is required. Keep these files local in the deployed static bundle so jsPDF can embed them into VFS before writing text.
