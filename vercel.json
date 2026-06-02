@@ -1,0 +1,124 @@
+{
+  "redirects": [
+    {
+      "source": "/assets/asset7/kidem-tazminati-hesaplama.html",
+      "destination": "/kidem-tazminati-hesaplama.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/kidem-tazminati-tavani-tarihi.html",
+      "destination": "/kidem-tazminati-tavani-tarihi.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/ihbar-tazminati-hesaplama.html",
+      "destination": "/ihbar-tazminati-hesaplama.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/giydirilmis-ucret-nedir.html",
+      "destination": "/giydirilmis-ucret-nedir.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/yillik-izin-ucretim.html",
+      "destination": "/yillik-izin-ucretim.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/arabuluculuk-rehberi.html",
+      "destination": "/arabuluculuk-rehberi.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/evlilik-tazminati.html",
+      "destination": "/evlilik-tazminati.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/istanbul-kidem.html",
+      "destination": "/istanbul-kidem.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/ankara-kidem.html",
+      "destination": "/ankara-kidem.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/izmir-kidem.html",
+      "destination": "/izmir-kidem.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/bursa-kidem.html",
+      "destination": "/bursa-kidem.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset7/antalya-kidem.html",
+      "destination": "/antalya-kidem.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/dogalgaz-kademe-hesaplama.html",
+      "destination": "/dogalgaz-kademe-hesaplama.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/il-dogalgaz-limitleri.html",
+      "destination": "/il-dogalgaz-limitleri.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/kfu-nedir-nasil-calisir.html",
+      "destination": "/kfu-nedir-nasil-calisir.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/dogalgaz-fatura-nasil-okunur.html",
+      "destination": "/dogalgaz-fatura-nasil-okunur.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/dogalgaz-tasarruf-ipuclari.html",
+      "destination": "/dogalgaz-tasarruf-ipuclari.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/kademe-2-nasil-dusurulurum.html",
+      "destination": "/kademe-2-nasil-dusurulurum.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/istanbul-dogalgaz-limiti.html",
+      "destination": "/istanbul-dogalgaz-limiti.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/ankara-dogalgaz-limiti.html",
+      "destination": "/ankara-dogalgaz-limiti.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/izmir-dogalgaz-limiti.html",
+      "destination": "/izmir-dogalgaz-limiti.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/bursa-dogalgaz-limiti.html",
+      "destination": "/bursa-dogalgaz-limiti.html",
+      "permanent": true
+    },
+    {
+      "source": "/assets/asset10/antalya-dogalgaz-limiti.html",
+      "destination": "/antalya-dogalgaz-limiti.html",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
