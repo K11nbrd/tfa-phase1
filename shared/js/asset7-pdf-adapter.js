@@ -226,8 +226,9 @@
   function drawFooter(doc, config, contentY) {
     const x = 12;
     const BOTTOM_ANCHOR = 250;
-    const PAGE_BOTTOM = 285;
+    const PAGE_BOTTOM = 290;
     const GAP = 8;
+    const MIN_GAP = 3;
     const STATUTE_BLOCK_HEIGHT = 14.5;
     const disclaimer = config.pdf_config.footer_disclaimer_tr;
     doc.setFont(FONT_FAMILY, 'normal');
@@ -236,8 +237,13 @@
     const measuredFooterHeight = STATUTE_BLOCK_HEIGHT + disclaimerLines.length * 3.4;
     let y = Math.max(contentY + GAP, BOTTOM_ANCHOR);
     if (y + measuredFooterHeight > PAGE_BOTTOM) {
-      doc.addPage();
-      y = 20;
+      const tight = Math.max(contentY + MIN_GAP, BOTTOM_ANCHOR);
+      if (tight + measuredFooterHeight <= PAGE_BOTTOM) {
+        y = tight;
+      } else {
+        doc.addPage();
+        y = 20;
+      }
     }
     doc.setDrawColor(226, 232, 240);
     doc.line(x, y - 4, 198, y - 4);
