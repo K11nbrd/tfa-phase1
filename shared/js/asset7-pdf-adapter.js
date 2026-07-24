@@ -223,20 +223,31 @@
     return y + 28;
   }
 
-  function drawFooter(doc, config) {
+  function drawFooter(doc, config, contentY) {
     const x = 12;
-    let y = 250;
+    const BOTTOM_ANCHOR = 250;
+    const PAGE_BOTTOM = 285;
+    const GAP = 8;
+    const STATUTE_BLOCK_HEIGHT = 14.5;
+    const disclaimer = config.pdf_config.footer_disclaimer_tr;
+    doc.setFont(FONT_FAMILY, 'normal');
+    doc.setFontSize(7.2);
+    const disclaimerLines = doc.splitTextToSize(disclaimer, 186);
+    const measuredFooterHeight = STATUTE_BLOCK_HEIGHT + disclaimerLines.length * 3.4;
+    let y = Math.max(contentY + GAP, BOTTOM_ANCHOR);
+    if (y + measuredFooterHeight > PAGE_BOTTOM) {
+      doc.addPage();
+      y = 20;
+    }
     doc.setDrawColor(226, 232, 240);
     doc.line(x, y - 4, 198, y - 4);
-
     setText(doc, STATUTE_BLOCK[0], x, y, { bold: true, size: 8.2, color: [15, 23, 42] });
     y += 4.5;
     setText(doc, STATUTE_BLOCK[1], x, y, { size: 7.7, color: [51, 65, 85] });
     y += 4;
     setText(doc, STATUTE_BLOCK[2], x, y, { size: 7.7, color: [51, 65, 85] });
     y += 6;
-
-    drawWrapped(doc, config.pdf_config.footer_disclaimer_tr, x, y, 186, {
+    drawWrapped(doc, disclaimer, x, y, 186, {
       size: 7.2, lineHeight: 3.4, color: [71, 85, 105]
     });
   }
@@ -276,7 +287,7 @@
       y = drawWrapped(doc, `Veraset notu: ${result.death_note_tr}`, 12, y, 186, { size: 8.5, lineHeight: 4.2 });
     }
 
-    drawFooter(doc, config);
+    drawFooter(doc, config, y);
 
     return {
       doc,
