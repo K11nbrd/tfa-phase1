@@ -1,16 +1,16 @@
 {
   "meta": {
     "schema_version": "1.0.0",
-    "last_updated": "2026-05-06",
-    "effective_period": "2026-H1",
-    "next_review_date": "2026-07-01"
+    "last_updated": "2026-08-01",
+    "effective_period": "2026-H2",
+    "next_review_date": "2027-01-01"
   },
   "tavan": {
-    "current_tl_per_year": 64948.77,
-    "effective_from": "2026-01-01",
-    "effective_until": "2026-06-30",
-    "source_citation": "T.C. Hazine ve Maliye Bakanlığı, Mali ve Sosyal Haklara İlişkin Genelge, 06/01/2026 tarihli, 2026/1 sayılı",
-    "source_url": "https://www.hmb.gov.tr/kamu-mali-yonetim-genel-mudurlugu-genelgeleri"
+    "current_tl_per_year": 73729.87,
+    "effective_from": "2026-07-01",
+    "effective_until": "2026-12-31",
+    "source_citation": "T.C. Hazine ve Maliye Bakanlığı, Mali ve Sosyal Haklara İlişkin Genelge, 03/07/2026 tarihli, Sıra No: 5",
+    "source_url": "https://ms.hmb.gov.tr/uploads/2026/07/2026-Yili-Temmuz-Ayina-Ait-Mali-ve-Sosyal-Haklara-Iliskin-Genelge-9b5304ed658d77cb.pdf"
   },
   "tavan_history": [
     {
@@ -78,6 +78,12 @@
       "effective_from": "2026-01-01",
       "effective_until": "2026-06-30",
       "tl_per_year": 64948.77
+    },
+    {
+      "period_label": "2026 II. Yarı",
+      "effective_from": "2026-07-01",
+      "effective_until": "2026-12-31",
+      "tl_per_year": 73729.87
     }
   ],
   "damga_vergisi_rate": 0.00759,
