@@ -4,6 +4,68 @@ import {asset7Pdf} from '../../shared/js/pdf-generator.js';
 const dataPath='../../data/asset7.json', linksPath='../../data/portfolio-links.json';
 let config,lastResult;
 const qs=s=>document.querySelector(s);
+
+const effectivityStringsPath = '/shared/data/effectivity-guard.json';
+
+function isEffectivityGuardPage() {
+  return Boolean(qs('#asset7Calc') || qs('#tavanTable'));
+}
+
+function renderStaleBanner(warningTr) {
+  if (!warningTr || !isEffectivityGuardPage()) return;
+
+  let banner = qs('[data-effectivity-stale-banner]');
+  if (!banner) {
+    const wrap = document.createElement('div');
+    wrap.className = 'wrap';
+
+    banner = document.createElement('div');
+    banner.className = 'warning';
+    banner.setAttribute('data-effectivity-stale-banner', '');
+    banner.setAttribute('role', 'status');
+    banner.setAttribute('aria-live', 'polite');
+
+    wrap.appendChild(banner);
+
+    const main = qs('main');
+    if (main) {
+      main.insertBefore(wrap, main.firstChild);
+    } else {
+      document.body.insertBefore(wrap, document.body.firstChild);
+    }
+  }
+
+  banner.textContent = warningTr;
+}
+
+async function initEffectivityGuard() {
+  if (!isEffectivityGuardPage()) return;
+
+  const guard = window.TFAEffectivityGuard;
+  if (!guard || typeof guard.checkEffectivity !== 'function') {
+    console.warn('TFAEffectivityGuard yüklenemedi; sayfa uyarı vermeden devam ediyor.');
+    return;
+  }
+
+  let template = config.tavan.effectivity_stale_warning_tr;
+  if (!template) {
+    try {
+      const sharedEffectivityStrings = await loadJSON(effectivityStringsPath);
+      template = sharedEffectivityStrings.default_stale_warning_tr;
+    } catch (error) {
+      console.warn('Paylaşılan effectivity uyarı metni yüklenemedi:', error);
+    }
+  }
+
+  const result = guard.checkEffectivity({
+    effectiveFrom: config.tavan.effective_from,
+    effectiveUntil: config.tavan.effective_until,
+    warningTemplate: template
+  });
+
+  if (result.stale) renderStaleBanner(result.warningTr);
+}
+
 const EVLILIK_MALE_INELIGIBLE_TR='Evlilik istisnası yalnızca kadın işçi için uygulanır.';
 const EVLILIK_FEMALE_DISCLOSURE_TR='Evlilik nedeniyle kıdem tazminatı yalnızca nikah tarihinden itibaren 1 yıl içinde ayrılan kadın işçiler için geçerlidir. Bu süre dolduktan sonra hak kaybedilir.';
 function parseTrNumber(raw){const s=String(raw??'').trim(); if(!s)return 0; let n; if(s.includes(',')){n=Number(s.replace(/\./g,'').replace(',','.')); return Number.isNaN(n)?0:n;} if(s.includes('.')){n=/^\d{1,3}(\.\d{3})+$/.test(s)?Number(s.replace(/\./g,'')):Number(s); return Number.isNaN(n)?0:n;} n=Number(s); return Number.isNaN(n)?0:n;}
@@ -75,5 +137,5 @@ function updateEvlilikGate({clearGender=false, reset=true}={}){const reason=qs('
 function initCalc(){const form=qs('#asset7Calc'); if(!form) return; const reason=qs('#reason'), gender=qs('#gender'); reason?.addEventListener('change',()=>updateEvlilikGate({clearGender:true})); gender?.addEventListener('change',()=>updateEvlilikGate()); updateEvlilikGate({reset:false}); bindTrDateInputs(form); form.addEventListener('submit',e=>{e.preventDefault(); const fd=new FormData(form), start=trDateToISO(fd.get('start')), end=trDateToISO(fd.get('end')); if(!start||!end){renderDateError(); return;} const input={reason:fd.get('reason'), gender:fd.get('gender'), start, end, base:parseTrNumber(fd.get('base')), food:parseTrNumber(fd.get('food')), transport:parseTrNumber(fd.get('transport')), fuelAnnual:parseTrNumber(fd.get('fuelAnnual'))}; renderResult(calc(input),input);});}
 function fillTavan(){const el=qs('#tavanTable'); if(!el)return; el.innerHTML=`<table class="table"><thead><tr><th>Dönem</th><th>Tutar</th><th>Geçerlilik</th></tr></thead><tbody>${config.tavan_history.map(h=>`<tr${h.tl_per_year===config.tavan.current_tl_per_year?' class="current"':''}><td>${h.period_label}</td><td>${money(h.tl_per_year)}</td><td>${h.effective_from} / ${h.effective_until}</td></tr>`).join('')}</tbody></table>`;}
 function fillGeo(){const slug=document.body.dataset.city; if(!slug)return; const c=config.cities.find(x=>x.slug===slug); if(!c)return; qs('#cityName').textContent=c.name_tr; qs('#courtName').textContent=c.local_court_name_tr; qs('#mediationBox').innerHTML=c.mediation_office_address?c.mediation_office_address:`<a class="btn ghost" href="https://www.turkiye.gov.tr/adalet-arabuluculuk-basvurusu" rel="nofollow">e-Devlet arabuluculuk başvurusu</a>`;}
-async function init(){config=await loadJSON(dataPath); const links=await loadJSON(linksPath); document.querySelectorAll('[data-current-tavan]').forEach(e=>e.textContent=money(config.tavan.current_tl_per_year)); const reason=qs('#reason'); if(reason) reason.innerHTML=config.eligibility_rules.departure_reasons.map(r=>`<option value="${r.id}">${r.label_tr}</option>`).join(''); initCalc(); fillTavan(); fillGeo(); ['labor','sme','inheritance'].forEach(c=>renderCrossLinks(qs('#cross-'+c),links,c));}
+async function init(){config=await loadJSON(dataPath); await initEffectivityGuard(); const links=await loadJSON(linksPath); document.querySelectorAll('[data-current-tavan]').forEach(e=>e.textContent=money(config.tavan.current_tl_per_year)); const reason=qs('#reason'); if(reason) reason.innerHTML=config.eligibility_rules.departure_reasons.map(r=>`<option value="${r.id}">${r.label_tr}</option>`).join(''); initCalc(); fillTavan(); fillGeo(); ['labor','sme','inheritance'].forEach(c=>renderCrossLinks(qs('#cross-'+c),links,c));}
 init().catch(err=>{console.error(err); document.body.insertAdjacentHTML('afterbegin',`<div class="nojs">Veri yüklenemedi: ${err.message}</div>`)});
