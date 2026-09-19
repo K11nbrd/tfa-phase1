@@ -1,1 +1,6 @@
-
+{
+  "meta": {
+    "schema_version": "1.0.0"
+  },
+  "default_stale_warning_tr": "Hesaplama {{tarih}} tarihli kurallara göre yapılmıştır."
+}
